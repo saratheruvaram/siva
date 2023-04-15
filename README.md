@@ -1,1 +1,1 @@
-# siva
+Adding a window small sized in which we can show the data behind the window .That is what ever we have below the window will be printed on the window.We can also compare the data behind the window.We can consider values behind the window. 
