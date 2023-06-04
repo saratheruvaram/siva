@@ -1,0 +1,45 @@
+Here's a basic C++ code for collision detection in games:
+
+```
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+// Define a structure for a 2D point
+struct Point {
+    float x;
+    float y;
+};
+
+// Define a structure for a rectangle
+struct Rectangle {
+    Point topLeft;
+    Point bottomRight;
+};
+
+// Function to check if two rectangles intersect
+bool checkCollision(Rectangle rect1, Rectangle rect2) {
+    if (rect1.topLeft.x > rect2.bottomRight.x || rect2.topLeft.x > rect1.bottomRight.x) {
+        return false;
+    }
+    if (rect1.topLeft.y > rect2.bottomRight.y || rect2.topLeft.y > rect1.bottomRight.y) {
+        return false;
+    }
+    return true;
+}
+
+int main() {
+    // Create two rectangles
+    Rectangle rect1 = {{0, 0}, {10, 10}};
+    Rectangle rect2 = {{5, 5}, {15, 15}};
+    
+    // Check if the rectangles intersect
+    if (checkCollision(rect1, rect2)) {
+        cout << "Collision detected!" << endl;
+    } else {
+        cout << "No collision detected." << endl;
+    }
+    
+    return 0;
+}
